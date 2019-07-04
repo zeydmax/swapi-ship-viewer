@@ -1,8 +1,7 @@
 .List {
     width: 100%;
-    margin: 80px auto;
+    margin: 0 auto 15px;
     text-align: center;
-    z-index: 50;
 
     ul {
         list-style: none;
@@ -10,14 +9,21 @@
         padding: 0;
 
         li {
-            padding: 10px 5px;
+            padding: 5px;
+            margin: 5px 0;
             box-shadow: 0 4px 8px 0 #eee;
             transition: 0.3s;
             text-transform: capitalize;
+            font-size: 1.2rem;
             font-family: 'Russo One', sans-serif;
+            cursor: pointer;
 
             &:hover {
-                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+            }
+
+            &:active {
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
             }
         }
     }
@@ -25,12 +31,12 @@
 
 @media (min-width: 600px) {
     .List {
-        width: 800px;
-        margin: 150px auto;
+        width: 600px;
+        margin: 0 auto 30px;
 
         ul li {
-            font-size: 1.2rem;
-            padding: 15px 7px;
+            font-size: 1.4rem;
+            padding: 25px 7px;
         }
     }
 }

@@ -1,0 +1,40 @@
+.Button {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 #ccc;
+    border: none;
+    border-radius: 3px;
+    color: black;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px 2px;
+    font-weight: bold; 
+    font-family: 'Russo One', sans-serif;
+    transition: 0.3s;
+
+    &:hover {
+        box-shadow: 0 4px 8px 0 rgb(110, 110, 110);       
+    }
+
+    &:active {
+        box-shadow: 0 2px 4px 0 rgb(110, 110, 110); 
+    }
+
+    &:disabled {
+        color: rgb(163, 163, 163);
+        cursor: not-allowed;
+        box-shadow: 0 4px 8px 0 #eee;
+    }
+}
+@media (min-width: 400px) {
+    .Button {
+        margin: 10px 5px;
+    }
+}
+@media (min-width: 600px) {
+    .Button {
+        margin: 10px;
+    }
+}

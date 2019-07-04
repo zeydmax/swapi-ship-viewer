@@ -1,0 +1,39 @@
+.DetailedContent {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    font-size: 1rem;
+    font-family: 'Russo One', sans-serif;
+
+    ul {
+        padding: 0;
+        list-style: none;
+
+        li{
+            display: flex;
+            padding: 12px 0;
+            justify-content: space-between;
+            
+            span, u {
+                text-transform: capitalize;
+            }
+    
+            span {
+                text-align: right;
+            }
+
+            u {
+                text-align: left;
+            }
+    } 
+        
+    }
+}
+
+@media (min-width: 600px) {
+    .DetailedContent {
+        width: 600px;
+        font-size: 1.2rem;
+    }
+}
