@@ -9,13 +9,14 @@ class StarshipViewer extends Component {
         list: null,
         loading: false,
         showModal: false,
+        pageCount: null,
         currentPage: 1,
     }
     chooseHandler = (i) => {
-        const newId = i.match(/\d+/);
+        console.log(i);
         this.props.history.push({
             pathname: '/ship',
-            search: '?' + newId
+            search: '?' + i
         })
     }
     switchPageHandler = (i) => {
@@ -30,16 +31,16 @@ class StarshipViewer extends Component {
             })
         }  
     }
-    componentDidMount () {
+    componentWillMount () {
         this.setState({loading: true})
         axios.get('/?page=1')
         .then(res => {
-            this.setState({list: res.data.results, loading: false})
+            this.setState({list: res.data.results, pageCount: res.data.count, loading: false})
         })
         .catch(err => console.log(err));
     }
     render () {
-        let { list, currentPage, loading } = this.state;
+        let { list, currentPage, loading, pageCount } = this.state;
         let listOfShips;
         if (loading) {
             listOfShips = <Spinner />
@@ -50,7 +51,7 @@ class StarshipViewer extends Component {
         return (
             <>
             {listOfShips}
-            <Pagination page={currentPage} count={4} click={this.switchPageHandler}/>
+            <Pagination page={currentPage} count={Math.ceil(pageCount/10)} click={this.switchPageHandler}/>
             </>
         );
     }

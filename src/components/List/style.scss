@@ -4,9 +4,13 @@
     text-align: center;
 
     ul {
+        width: 90%;
         list-style: none;
-        margin: 0 15px;
+        margin: 0 auto;
         padding: 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(5, 150px);
 
         li {
             padding: 5px;
@@ -17,6 +21,14 @@
             font-size: 1.2rem;
             font-family: 'Russo One', sans-serif;
             cursor: pointer;
+            line-height: 130px;
+            text-align: center;
+
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: normal;
+            }
 
             &:hover {
                 box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -34,9 +46,15 @@
         width: 600px;
         margin: 0 auto 30px;
 
-        ul li {
-            font-size: 1.4rem;
-            padding: 25px 7px;
-        }
+        ul {
+            grid-template-rows: repeat(5, 120px);
+            
+
+            li {
+                font-size: 1.4rem;
+                padding: 25px 7px;
+                line-height: 50px;
+            }
+        } 
     }
 }

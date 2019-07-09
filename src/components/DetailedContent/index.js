@@ -7,7 +7,7 @@ const detailedContent = props => {
         .map(key => {
             const exclude = /(name|url|edited|created|films|pilots)/gi;
             if (exclude.test(key)){
-                return;
+                return null;
             }
             else {
                 const oldKey = key;
